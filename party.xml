@@ -6,7 +6,9 @@ contains the full copyright notices and license terms. -->
         <record model="ir.action.act_window" id="act_activity_form">
             <field name="name">Activities</field>
             <field name="res_model">activity.activity</field>
-            <field name="domain">[("party", "=", Eval('active_id'))]</field>
+            <field name="domain"
+                eval="[('party', '=', Eval('active_id'))]"
+                pyson="1"/>
         </record>
         <record model="ir.action.keyword"
                 id="act_open_activities_keyword">
