@@ -52,5 +52,10 @@ this repository contains the full copyright notices and license terms. -->
             <field name="name">Activity</field>
             <field name="code">activity.activity</field>
         </record>
+        <record model="ir.property" id="property_sequence_activity">
+            <field name="field"
+                search="[('model.model', '=', 'activity.configuration'), ('name', '=', 'activity_sequence')]"/>
+            <field name="value" eval="'ir.sequence,' + str(ref('sequence_activity'))"/>
+        </record>
     </data>
 </tryton>
