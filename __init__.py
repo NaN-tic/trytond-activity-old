@@ -11,7 +11,6 @@ from .party import *
 def register():
     Pool.register(
         Configuration,
-        CompanyConfiguration,
         ActivityType,
         ActivityReference,
         Activity,
