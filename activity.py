@@ -52,7 +52,7 @@ class Activity(ModelSQL, ModelView):
             ('not_held', 'Not Held'),
             ], 'State', required=True)
     description = fields.Text('Description')
-    employee = fields.Many2One('company.employee', 'Employee', required=True)
+    employee = fields.Many2One('company.employee', 'Employee')
     location = fields.Char('Location')
     party = fields.Many2One('party.party', 'Party')
 
@@ -136,6 +136,16 @@ class Activity(ModelSQL, ModelView):
     def default_party(cls):
         resource = cls.default_resource()
         return Activity._resource_party(resource)
+
+    @staticmethod
+    def default_employee():
+        User = Pool().get('res.user')
+        if Transaction().context.get('employee'):
+            return Transaction().context['employee']
+        else:
+            user = User(Transaction().user)
+            if user.employee:
+                return user.employee.id
 
     @staticmethod
     def _resource_party(resource):
