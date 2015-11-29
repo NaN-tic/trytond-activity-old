@@ -121,8 +121,12 @@ class Activity(ModelSQL, ModelView):
     @staticmethod
     def default_employee():
         User = Pool().get('res.user')
-        user = User(Transaction().user)
-        return user.employee and user.employee.id or None
+        if Transaction().context.get('employee'):
+            return Transaction().context['employee']
+        else:
+            user = User(Transaction().user)
+            if user.employee:
+                return user.employee.id
 
     @staticmethod
     def default_state():
@@ -136,16 +140,6 @@ class Activity(ModelSQL, ModelView):
     def default_party(cls):
         resource = cls.default_resource()
         return Activity._resource_party(resource)
-
-    @staticmethod
-    def default_employee():
-        User = Pool().get('res.user')
-        if Transaction().context.get('employee'):
-            return Transaction().context['employee']
-        else:
-            user = User(Transaction().user)
-            if user.employee:
-                return user.employee.id
 
     @staticmethod
     def _resource_party(resource):
