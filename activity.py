@@ -138,6 +138,9 @@ class Activity(ModelSQL, ModelView):
 
     @classmethod
     def default_party(cls):
+        party_ids = Transaction().context.get('party', [])
+        if len(party_ids) == 1:
+            return party_ids[0]
         resource = cls.default_resource()
         return Activity._resource_party(resource)
 
