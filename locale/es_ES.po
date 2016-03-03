@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -52,7 +52,7 @@ msgstr "Ubicación"
 
 msgctxt "field:activity.activity,party:"
 msgid "Party"
-msgstr "Terceros"
+msgstr "Tercero"
 
 msgctxt "field:activity.activity,rec_name:"
 msgid "Name"
@@ -84,11 +84,11 @@ msgstr "Secuencia actividad"
 
 msgctxt "field:activity.configuration,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:activity.configuration,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:activity.configuration,id:"
 msgid "ID"
@@ -106,38 +106,6 @@ msgctxt "field:activity.configuration,write_uid:"
 msgid "Write User"
 msgstr "Usuario modificación"
 
-msgctxt "field:activity.configuration.company,activity_sequence:"
-msgid "Activity Sequence"
-msgstr "Secuencia actividad"
-
-msgctxt "field:activity.configuration.company,company:"
-msgid "Company"
-msgstr "Empresa"
-
-msgctxt "field:activity.configuration.company,create_date:"
-msgid "Create Date"
-msgstr "Fecha de creación"
-
-msgctxt "field:activity.configuration.company,create_uid:"
-msgid "Create User"
-msgstr "Usuario de creación"
-
-msgctxt "field:activity.configuration.company,id:"
-msgid "ID"
-msgstr "Identificador"
-
-msgctxt "field:activity.configuration.company,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
-msgctxt "field:activity.configuration.company,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:activity.configuration.company,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
-
 msgctxt "field:activity.reference,create_date:"
 msgid "Create Date"
 msgstr "Fecha creación"
@@ -148,7 +116,7 @@ msgstr "Usuario creación"
 
 msgctxt "field:activity.reference,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.reference,model:"
 msgid "Model"
@@ -172,15 +140,15 @@ msgstr "Activa"
 
 msgctxt "field:activity.type,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:activity.type,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:activity.type,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.type,name:"
 msgid "Name"
@@ -202,6 +170,10 @@ msgctxt "field:activity.type,write_uid:"
 msgid "Write User"
 msgstr "Usuario modificación"
 
+msgctxt "field:party.party,activities:"
+msgid "Activities"
+msgstr "Actividades"
+
 msgctxt "model:activity.activity,name:"
 msgid "Activity"
 msgstr "Actividad"
@@ -209,10 +181,6 @@ msgstr "Actividad"
 msgctxt "model:activity.configuration,name:"
 msgid "Activity Configuration"
 msgstr "Configuración actividades"
-
-msgctxt "model:activity.configuration.company,name:"
-msgid "Activity Configuration per Company"
-msgstr "Configuración actividades por empresa"
 
 msgctxt "model:activity.reference,name:"
 msgid "Activity Reference"
@@ -337,6 +305,18 @@ msgstr "Actividades"
 msgctxt "view:activity.activity:"
 msgid "Activity"
 msgstr "Actividad"
+
+msgctxt "view:activity.activity:"
+msgid "Description"
+msgstr "Descripción"
+
+msgctxt "view:activity.activity:"
+msgid "End Time"
+msgstr "Hora final"
+
+msgctxt "view:activity.activity:"
+msgid "Start Time"
+msgstr "Hora inicio"
 
 msgctxt "view:activity.configuration:"
 msgid "Activity Configuration"
