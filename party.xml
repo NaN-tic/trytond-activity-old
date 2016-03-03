@@ -8,6 +8,8 @@ contains the full copyright notices and license terms. -->
             <field name="res_model">activity.activity</field>
             <field name="domain" eval="[('party', 'in', Eval('active_ids'))]"
                 pyson="1"/>
+            <field name="context" eval="{'party': Eval('active_ids')}"
+                pyson="1"/>
         </record>
         <record model="ir.action.keyword"
                 id="act_open_activities_keyword">
