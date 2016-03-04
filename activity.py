@@ -178,5 +178,7 @@ class Activity(ModelSQL, ModelView):
             cls.raise_user_error('no_activity_sequence')
         vlist = [x.copy() for x in vlist]
         for vals in vlist:
+            if not 'resource' in vals:
+                vals['resource'] = None
             vals['code'] = Sequence.get_id(sequence.id)
         return super(Activity, cls).create(vlist)
