@@ -69,13 +69,13 @@ class Activity(ModelSQL, ModelView):
     @classmethod
     def __register__(cls, module_name):
         TableHandler = backend.get('TableHandler')
-        cursor = Transaction().cursor
+        cursor = Transaction().connection.cursor()
         sql_table = cls.__table__()
-        table = TableHandler(cursor, cls, module_name)
+        table = TableHandler(cls, module_name)
 
         code_exists = True
-        if TableHandler.table_exist(cursor, cls._table):
-            table = TableHandler(cursor, cls, module_name)
+        if TableHandler.table_exist(cls._table):
+            table = TableHandler(cls, module_name)
             code_exists = table.column_exist('code')
 
         super(Activity, cls).__register__(module_name)
