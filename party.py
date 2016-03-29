@@ -5,10 +5,10 @@ from trytond.pool import PoolMeta
 
 
 __all__ = ['Party']
-__metaclass__ = PoolMeta
 
 
 class Party:
+    __metaclass__ = PoolMeta
     __name__ = "party.party"
 
     activities = fields.One2Many('activity.activity', 'party',
