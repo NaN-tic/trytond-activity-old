@@ -71,7 +71,6 @@ class Activity(ModelSQL, ModelView):
         TableHandler = backend.get('TableHandler')
         cursor = Transaction().connection.cursor()
         sql_table = cls.__table__()
-        table = TableHandler(cls, module_name)
 
         code_exists = True
         if TableHandler.table_exist(cls._table):
@@ -80,6 +79,7 @@ class Activity(ModelSQL, ModelView):
 
         super(Activity, cls).__register__(module_name)
 
+        table = TableHandler(cls, module_name)
         # Migration from 3.2: Remove type and direction fields
         table.not_null_action('type', action='remove')
         table.not_null_action('direction', action='remove')
